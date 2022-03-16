@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>薅羊毛</title>
+
+    <style>
+        div {
+            margin: 0 auto;
+            width: 800px;
+            margin-top: 300px;
+            font-size: 2.5em;
+            vertical-align:text-bottom;
+        }
+
+        input[type='text'] {
+            width: 500px;
+            height: 40px;
+            
+        }
+
+        input[type='button'] {
+            width: 80px;
+            height:45px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <fieldset>
+            <legend>请输入文件链接</legend>
+            <input id="url" type="text" name="resurl" > <input id="button" type="button" value="解析">
+        </fieldset>
+     
+    </div>
+    <script>
+        var button = document.getElementById("button");
+        button.onclick = function () {
+            var urlstr = document.getElementById("url").value;
+            var p = urlstr.indexOf('?');
+            if (p != -1) {
+                urlstr = urlstr.substring(0, p)
+            }
+            urlstr = urlstr.replace("view", "share") + "?share_api=1&width=1400";
+        
+            window.open(urlstr, '_blank');
+            document.getElementById("url").value = "";
+        }
+    </script>
+</body>
+</html>
