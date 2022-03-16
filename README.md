@@ -1,2 +1,4 @@
-# wenku.github.io
-free use of bd  wenku
+使用方法
+1. 找到你需要浏览的文档
+2. 将文档的url地址，复制到文本框中
+3. 点击解析，即可得到你想要的文件
